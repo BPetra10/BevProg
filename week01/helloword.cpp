@@ -1,6 +1,7 @@
-#include "header.h"
+#include "./header.h"
 
 int main(){
-	cout << "Hello vword!\n";
+	cout << "Hello word!\n";
+	cout << "Second row.\n";
 	return 0;
 }
