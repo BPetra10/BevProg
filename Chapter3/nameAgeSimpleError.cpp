@@ -7,9 +7,9 @@ int main(){
 	cin >> firstName;
 	cout << "Hello " << firstName<<"\n";
 	cout << "Enter the name of the person you want to write to:";
-	string modifyFirstName;
-	cin >> modifyFirstName;
-	cout << "\t Dear " << modifyFirstName <<",\n";
+	string toFirstName;
+	cin >> toFirstName;
+	cout << "\t Dear " << toFirstName <<",\n";
 	//2.
 	cout << "How are you? I'm fine. I miss you.\n" 
 	<<"What did you do in the summer camp? \n Where were you?\n";
@@ -38,12 +38,27 @@ int main(){
 	cout << "Please enter an age: ";
 	int age;
 	cin>>age;
-	if(age<=0 || age<=110)
+	if(age<=0 || age>=110)
 	{
 		simple_error("You are kidding!");
 	}else
 	{
 		cout<<"I hear you just had a birthday and you are "<<age<<" years old.\n";
 	}
+	//6.
+	if(age<12)
+	{
+		cout<<"Next year you will be: "<<age+1<<"\n";
+	}
+	if(age==17)
+	{
+		cout<<"Next year you will be able to vote.\n";
+	}
+	if(age>70)
+	{
+		cout<<"I hope you are enjoying retirement.\n";
+	}
+	//7.
+	cout<<"Yours sincerely,\n\n"<<firstName<<"\n";
 	return 0;
 }
