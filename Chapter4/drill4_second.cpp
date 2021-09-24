@@ -63,6 +63,7 @@ int main()
 		is_valid=true;
 	}
 
+	cout<<"The numbers in the vector:\n";
 	sort(valuesEntered);
 	for (double value: valuesEntered)
 	{
