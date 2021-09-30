@@ -2,7 +2,7 @@
 int main()
 try {
 //1. Cout << "Success!\n";
-cout<< "1. Success!\n";
+cout << "1. Success!\n";
 
 //2. cout << "Success!\n;
 cout << "2. Success!\n";
@@ -22,75 +22,121 @@ cout << "5. Success!\n";
 //6. vector<int> v(10); v(5) = 7; if (v(5)!=7) cout << "Success!\n";
 vector<int> ve(10);  
 ve[5] = 7; 
-if (ve[5]==7)  cout << "6. Success!\n";
+if (ve[5]==7)  
+	cout << "6. Success!\n";
 
 //7. if (cond) cout << "Success!\n"; else cout << "Fail!\n";
 if (1>0)  
-cout << "7. Success!\n"; 
+	cout << "7. Success!\n"; 
 else 
-cout << "Fail!\n";
+	cout << "Fail!\n";
 
 //8. bool c = false; if (c) cout << "Success!\n"; else cout << "Fail!\n";
 bool c = true; 
 if (c) 
-cout << "8. Success!\n"; 
+	cout << "8. Success!\n"; 
 else 
-cout << "Fail!\n";
+	cout << "Fail!\n";
 
 //9. string s = "ape"; boo c = "fool"<s; if (c) cout << "Success!\n"; ??????
 string s = "ape"; 
 string d ="fool";
 bool is_true;
 if(s<d)
-is_true = true; 
-if (is_true) cout << "9. Success!\n";
+	is_true = true; 
+if (is_true) 
+	cout << "9. Success!\n";
 
 //10. string s = "ape"; if (s=="fool") cout << "Success!\n";
-string e = "ape"; if (e!="fool") cout << "10. Success!\n";
+string e = "ape"; 
+if (e!="fool") 
+	cout << "10. Success!\n";
 
 //11. string s = "ape"; if (s=="fool") cout < "Success!\n";
-string f = "ape"; if (f!="fool") cout <<"11. Success!\n";
+string f = "ape"; 
+if (f!="fool") 
+	cout <<"11. Success!\n";
 
 //12. string s = "ape"; if (s+"fool") cout < "Success!\n";
-string g = "ape"; if (g!="fool") cout << "12. Success!\n";
+string g = "ape"; 
+if (g!="fool") 
+	cout << "12. Success!\n";
 
 //13. vector<char> v(5); for (int i=0; 0<v.size(); ++i) ; cout << "Success!\n";
 vector<char> vec(5);
 for (int i=0; i<vec.size(); ++i) 
-cout << "13. Success!\n";
+	cout << "13. Success!\n";
 
 //14. vector<char> v(5); for (int i=0; i<=v.size(); ++i) ; cout << "Success!\n";
 vector<char> vect(5); 
 for (int i=0; i<vect.size(); ++i) 
-cout << "14. Success!\n";
+	cout << "14. Success!\n";
 
 //15. string s = "Success!\n"; for (int i=0; i<6; ++i) cout << s[i];
 string st = "Success!\n"; 
 for (int i=0; i<6; ++i) 
-cout << "15. "<<st;
+	cout << "15. "<<st;
+
 //16. if (true) then cout << "Success!\n"; else cout << "Fail!\n";
-if (true) cout << "16. Success!\n"; else cout << "Fail!\n";
+if (true) 
+	cout << "16. Success!\n"; 
+else 
+	cout << "Fail!\n";
+
 //17. int x = 2000; char c = x; if (c==2000) cout << "Success!\n";
+int num = 2000; 
+string seventeen =to_string(num); 
+if (seventeen=="2000") 
+	cout << "17. Success!\n";
 
 //18. string s = "Success!\n"; for (int i=0; i<10; ++i) cout << s[i];
+string eighteen = "18. Success!\n"; 
+for (int i=0; i<13; ++i) 
+	cout << eighteen[i];
 
 //19. vector v(5); for (int i=0; i<=v.size(); ++i) ; cout << "Success!\n";
+vector<char> vecto(5); 
+for (int i=0; i<vecto.size(); ++i) 
+	cout << "19. Success!\n";
 
 //20. int i=0; int j = 9; while (i<10) ++j; if (j<i) cout << "Success!\n";
+int i=0; 
+int j = 9; 
+while (i<10) 
+{	
+	++i;
+	if (j<i) cout << "20. Success!\n";
+}
 
 //21. int x = 2; double d = 5/(x–2); if (d==2*x+0.5) cout << "Success!\n";
 int y = 2; 
 double z = 4.5/(y-1); 
 if (z==2*y+0.5) 
-cout << "21. Success!\n";
+	cout << "21. Success!\n";
 
 //22. string<char> s = "Success!\n"; for (int i=0; i<=10; ++i) cout << s[i];
-
+string strin = "22. Success!\n"; 
+for (int i=0; i<13; ++i) 
+	cout << strin[i];
 //23. int i=0; while (i<10) ++j; if (j<i) cout << "Success!\n";
+int number=0;
+int secondnum = 5; 
+while (number<10) ++number; 
+if (secondnum<number) 
+	cout << "23. Success!\n";
 
 //24. int x = 4; double d = 5/(x–2); if (d=2*x+0.5) cout << "Success!\n";
+double x = 4; 
+double dou = 5/(x-2); 
+if (dou==2*x-5.5) 
+	cout << "24. Success!\n";
 
 //25. cin << "Success!\n";
+string huszonot;
+cout<<"Please write Success!:";
+cin>>huszonot;
+cout<<"25. "<<huszonot<<"\n";
+
 return 0;
 }
 catch (exception& e) {
