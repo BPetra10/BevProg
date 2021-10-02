@@ -132,10 +132,10 @@ if (dou==2*x-5.5)
 	cout << "24. Success!\n";
 
 //25. cin << "Success!\n";
-string huszonot;
+string twentyfive;
 cout<<"Please write Success!:";
-cin>>huszonot;
-cout<<"25. "<<huszonot<<"\n";
+cin>>twentyfive;
+cout<<"25. "<<twentyfive<<"\n";
 
 return 0;
 }
