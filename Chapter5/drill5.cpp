@@ -115,9 +115,10 @@ if (z==2*y+0.5)
 	cout << "21. Success!\n";
 
 //22. string<char> s = "Success!\n"; for (int i=0; i<=10; ++i) cout << s[i];
-string strin = "22. Success!\n"; 
-for (int i=0; i<13; ++i) 
-	cout << strin[i];
+vector<string> strin {"Success!"}; 
+for (int i=0; i<strin[0].size(); ++i) 
+	cout << (strin[0][i])<<"\n";
+	
 //23. int i=0; while (i<10) ++j; if (j<i) cout << "Success!\n";
 int number=0;
 int secondnum = 5; 
