@@ -1,5 +1,9 @@
 #include "../header.h"
 
+constexpr char number='8';
+constexpr char print=';';
+constexpr char quit='q';
+
 double expression();
 
 /*
@@ -25,6 +29,7 @@ public:
 	Token_stream();
 	Token get();
 	void putback(Token t);
+	void ignore(char c);
 private:
 	bool full{false};
 	Token buffer;
@@ -48,8 +53,8 @@ Token Token_stream::get(){
 	cin >> ch;
 
 	switch(ch){
-		case 'q':
-		case ';':
+		case quit:
+		case print:
 		case '(':
 		case ')':
 		case '+':
@@ -65,12 +70,25 @@ Token Token_stream::get(){
 			cin.putback(ch);
 			double val = 0;
 			cin >> val;
-			return Token('8',val);
+			return Token(number,val);
 		}
 		default:
 			simple_error("Bad token");
 			return 0;
 	}
+}
+
+void Token_stream::ignore(char c){ //A helytelenül megadott műveleteket kipucoljuk
+	if (full && c==buffer.kind)//;
+	{
+		full=false;
+		return;
+	}
+	full=false;
+
+	char ch = 0;
+	while(cin>>ch)
+		if(ch==c) return;
 }
 
 Token_stream ts; 
@@ -88,9 +106,14 @@ double primary() //zárójelek és számok kezelése
 			if(t.kind !=')') error(") expected");
 			return d;
 		}
-		case '8':
+		case number:
 			return t.value;
+		case '-':
+			return - primary();
+		case '+':
+			return primary();
 		default:
+			ts.putback(t);
 			error("primary expected");
 			return 0;
 	}
@@ -164,28 +187,31 @@ double expression()
 	}
 }
 
+void clean_up_mess()
+{
+	ts.ignore(print);
+}
+
+void calculate(){
+
+	while(cin)
+	try{//Amíg tud beolvasni, addig fut
+		Token t = ts.get();
+		while(t.kind==print) t = ts.get();
+		if (t.kind==quit) return; // kiléptet
+		ts.putback(t);
+		cout <<"="<<expression()<<'\n';
+	}catch(exception& e){
+		cerr<<e.what()<<"\n";
+		clean_up_mess();
+	}
+}
+
 int main()
 try{
-
-	double val = 0;
-
-	while(cin){//Amíg tud beolvasni, addig fut
-		Token t = ts.get();
-		if (t.kind=='q') break; // kiléptet
-		if(t.kind==';')
-			cout <<"="<<val<<'\n'; //; esetén kiírja az eredményt
-		else
-			ts.putback(t);
-
-		val = expression();
-	} 
-	 
-
-
-	return 0;
-
-}catch (exception& e)
-{
+	calculate();
+	return 0; 	 
+}catch (exception& e){
 	cerr << "Error: "<<e.what()<<"\n";
 	return 1;
 }

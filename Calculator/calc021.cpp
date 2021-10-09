@@ -1,5 +1,9 @@
 #include "../header.h"
 
+constexpr char number='8';
+constexpr char print=';';
+constexpr char quit='q';
+
 double expression();
 
 /*
@@ -48,8 +52,8 @@ Token Token_stream::get(){
 	cin >> ch;
 
 	switch(ch){
-		case 'q':
-		case ';':
+		case quit:
+		case print:
 		case '(':
 		case ')':
 		case '+':
@@ -65,7 +69,7 @@ Token Token_stream::get(){
 			cin.putback(ch);
 			double val = 0;
 			cin >> val;
-			return Token('8',val);
+			return Token(number,val);
 		}
 		default:
 			simple_error("Bad token");
@@ -88,7 +92,7 @@ double primary() //zárójelek és számok kezelése
 			if(t.kind !=')') error(") expected");
 			return d;
 		}
-		case '8':
+		case number:
 			return t.value;
 		default:
 			error("primary expected");
@@ -171,8 +175,8 @@ try{
 
 	while(cin){//Amíg tud beolvasni, addig fut
 		Token t = ts.get();
-		if (t.kind=='q') break; // kiléptet
-		if(t.kind==';')
+		if (t.kind==quit) break; // kiléptet
+		if(t.kind==print)
 			cout <<"="<<val<<'\n'; //; esetén kiírja az eredményt
 		else
 			ts.putback(t);
@@ -180,8 +184,6 @@ try{
 		val = expression();
 	} 
 	 
-
-
 	return 0;
 
 }catch (exception& e)
