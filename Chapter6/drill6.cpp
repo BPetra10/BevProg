@@ -199,7 +199,8 @@ void calculate(){
 int main()
 try{
 	cout<<"Welcome to our simple calculator. \n"<< "Please enter expressions using floating-point numbers. \n";
-	cout<<"Available operators: + - * / % \n"<<"print out with: = \nexit with: x \n";
+	cout<<"Available operators: + - * / %. You can use (). \n"<<"print out with: = , exit with: x. \n";
+
 	calculate();
 	return 0; 	 
 }catch (exception& e){
