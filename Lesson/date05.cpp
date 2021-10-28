@@ -43,7 +43,8 @@ public:
  int get_year(){return year;};
  Month get_month(){return month;};
  int get_day(){return day;};
- /*void set_year(int y)
+ 
+ void set_year(int y)
  {
  	if(y>0)
  	 year=y;
@@ -60,7 +61,7 @@ public:
  	 day=d;
  	else
  		error("Invalid day.\n");
- }*/
+ }
 };
 
 bool Date::is_valid(){
