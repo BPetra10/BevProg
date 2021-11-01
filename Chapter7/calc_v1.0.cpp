@@ -3,7 +3,7 @@
 	Written by Renátó Besenczi based on the book BS, "Programming: Principles and Practice using C++, Second Edition"
 	See chapter 6 and chapter 7 of book: https://stroustrup.com/programming.html
 	© 2020 Renátó Besenczi, according to CC0. Questions: renato.besenczi@gmail.com
-	Addition: sqrt(),pow() by Petra Bodnár;
+	Addition: sqrt(),pow(), #declaration by Petra Bodnár;
 	Input from cin; output to cout. Input comes from cin through the Token_stream called ts.
 	Grammar:
 	
@@ -16,11 +16,13 @@
 		;
 	Quit:
 		q
+		exit
 	Statement:
 		Declaration
 		Expression
 	Declaration:
 		"let" Name "=" Expression
+		'#' Name "=" Expression
 	Name:
 		string literal
 	Expression:
@@ -37,6 +39,7 @@
 		( Expression )
 		– Primary
 		+ Primary
+		# Primary
 		sqrt(Expression)
 		pow(powerbase,exponent)
 	Number:
@@ -58,6 +61,7 @@ const string declkey = "let"; //constexpr string since C++20 only
 const string quit_word = "exit";
 const string square_word = "sqrt";
 const string pow_word = "pow";
+const char hashDeclar = '#';
 
 //function declarations
 double expression();
@@ -169,6 +173,7 @@ Token Token_stream::get()
 		case '%':
 		case '=':
 		case ',':
+		case hashDeclar:
 			return Token(ch);
 		case '.':
 		case '0': case '1': case '2': case '3': case '4':
@@ -277,6 +282,8 @@ double primary()
 			return - primary();
 		case '+':
 			return primary();
+		case hashDeclar:
+			return declaration();
 		case sq_root:
 			return square_root();
 		case mt_pow:
