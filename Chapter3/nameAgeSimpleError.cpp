@@ -34,6 +34,22 @@ int main(){
 	{
 		cout << "If you see "<<anotherFriend<<" please ask them to call me.\n";
 	}
+	/*
+	cout << "Enter an m, if your friend is a male, f if female:";
+	char friendSex;
+	cin>> friendSex;
+	switch(friendSex)
+	{
+		case 'm':
+		cout << "If you see "<<anotherFriend<<" please ask him to call me.\n";
+		break;
+		case 'f':
+		cout << "If you see "<<anotherFriend<<" please ask her to call me.\n";
+		break;
+		default:
+		cout << "If you see "<<anotherFriend<<" please ask them to call me.\n";
+	}
+	*/
 	//5.
 	cout << "Please enter an age: ";
 	int age;
