@@ -127,5 +127,5 @@ try
 catch(exception& e)
 {
     cerr <<e.what()<<"\n";
-    return 1;
+    return 3;
 }
