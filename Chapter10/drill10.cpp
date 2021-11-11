@@ -61,13 +61,15 @@ try{
 	ifstream ifile {inPutName};
 	if(!ifile) error("Can't open ifile ",inPutName);
 	vector<Point> processed_points;
+
+	Point p;
 	while(ifile>>first>>firstNumber>>comma>>secondNumber>>last)
 	{
-		Point p;
 		p.x=firstNumber;
 		p.y=secondNumber; 
 		processed_points.push_back(p);
 	}
+	ifile.close();
 
 	//6.
 	cout<<"Both vector elements: \n";
@@ -84,4 +86,8 @@ catch(exception& e)
 {
     cerr <<e.what()<<"\n";
     return 1;
+}
+catch (...) {
+    cerr << "Something terrible happened!\n";
+    return 2;
 }
