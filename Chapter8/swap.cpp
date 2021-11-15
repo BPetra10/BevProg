@@ -75,6 +75,7 @@ int main()
 	*/
 	
 	//swap_r(dx,dy);
+	//Nem fog működni, mivel int referenciát várunk, de double-t akarunk átadni.
 	//cannot bind non-const lvalue reference of type ‘int&’ to an rvalue of type ‘int’ 
 
 	cout<<"x: "<<x<<"\n";
