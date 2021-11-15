@@ -36,7 +36,7 @@ int main()
 		array4[i]=100+i;
 	}
 	print_array(cout,array4,20);
-	//9. delete[] array2,array3,array4; Probald ki majd(Valgrind)
+	//9. delete[] array2,array3,array4; Próbald ki majd(Valgrind)
 	//9.
 	delete[] array2;
 	delete[] array3;
