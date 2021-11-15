@@ -29,13 +29,18 @@ int main()
 	int* array3 = new int[11]{100,101,102,103,104,105,106,107,108,109,110};
 	print_array(cout,array3,11);
 	cout<<"\n";
-	//7. 
+	//8. 
 	int* array4 = new int[20];
 	for (int i = 0; i < 20; i++)
 	{
 		array4[i]=100+i;
 	}
 	print_array(cout,array4,20);
+	//9. delete[] array2,array3,array4; Probald ki majd(Valgrind)
+	//9.
+	delete[] array2;
+	delete[] array3;
+	delete[] array4;
 	
 	return 0;
 }
