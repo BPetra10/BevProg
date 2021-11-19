@@ -46,6 +46,16 @@ void fill_from_file(vector<Point>& points, string& name)
         points.push_back(p);
 }
 
+bool operator==(const Point& p1, const Point& p2)
+{
+    return p1.x==p2.x && p1.y==p2.y;
+}
+
+bool operator!=(const Point& p1, const Point& p2)
+{
+    return !(p1==p2);
+}
+
 int main()
 try {
     //2.
@@ -82,6 +92,14 @@ try {
 
     if (original_points.size() != processed_points.size())
         cout << "Something's wrong!\n";
+    else
+    {
+        for (int i = 0; i < original_points.size(); ++i)
+        {
+            if(original_points[i]!=processed_points[i])
+                cout << "Something's wrong!\n";
+        }
+    }
 }
 catch (exception& e) {
     cerr << "Error: " << e.what() << '\n';

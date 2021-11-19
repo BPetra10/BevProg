@@ -14,6 +14,16 @@ void PrintDatas(string vectorName,vector<Point> vector)
 		cout<<"("<<points.x<<","<<points.y<<")"<<"\n";
 }
 
+bool operator==(const Point& p1, const Point& p2)
+{
+    return p1.x==p2.x && p1.y==p2.y;
+}
+
+bool operator!=(const Point& p1, const Point& p2)
+{
+    return !(p1==p2);
+}
+
 int main()
 try{
 	//2.
@@ -79,6 +89,14 @@ try{
 	//7.
 	if (original_points.size() != processed_points.size())
         cout << "Something's wrong!\n";
+    else
+    {
+    	for (int i = 0; i < original_points.size(); ++i)
+    	{
+    		if(original_points[i]!=processed_points[i])
+    			cout << "Something's wrong!\n";
+    	}
+    }
 
 	return 0;
 }
