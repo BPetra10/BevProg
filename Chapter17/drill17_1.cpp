@@ -58,7 +58,7 @@ try{
 		vector3.push_back(100+i);
 
 	/*
-		vector<int> vector3(20);
+	vector<int> vector3(20);
 	for (int i = 0; i < 20; i++)
 		vector3[i]=100+i;
 	*/

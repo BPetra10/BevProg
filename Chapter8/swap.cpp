@@ -2,13 +2,19 @@
 
 //Which functions and calls compiled, and why?
 // Az érték és referencia szerinti átadás sikeres ilyen módon megírva
+/*érték szerinti átadásnál a mainben megadott változók értékeit átmásoljuk
+	egy másik objektumba, ezért a main x és y-ja változatlan marad.
+*/
 void swap_v(int a,int b)
 { 
 	int temp; 
 	temp = a, a=b; 
 	b=temp;
 }
-
+/*
+ referencia szerinti átadásnál a mainben megadott változók értékeire utalunk,
+ így a mainben lévő x és y értéke módosulni fog.
+*/
 void swap_r(int& a,int& b)
 { 
 	int temp; 
