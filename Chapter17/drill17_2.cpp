@@ -7,7 +7,7 @@ void print_array(ostream& os, int* a, int n)
 	cout<<"\n";
 }
 
-void print_vector(vector<int>& v)
+void print_vector(const vector<int>& v)
 {
 	for (int i=0; i<10; i++)
 		cout << v[i] << " ";
