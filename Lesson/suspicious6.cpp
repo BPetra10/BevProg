@@ -12,7 +12,12 @@ std::vector<int> suspicious()
 		//hiba esetén implicit módú felszabadítás lesz, hívjuk a destruktort
 		//Így a p-nek is hívódik a destruktora, így felszabadul a terület
 	}
-	return p; //Move
+	return p; //Move:
+	//Egy vektort szeretnénk, hogy egy másikra hivatkozzon, 
+	//anélkül, hogy másolnánk egyik vektorból, a másikba
+	//Az első vektor elemeinek a pointerét és elemszámát
+	//átadjuk a másiknak, így sikeresen átkerültek az elemek.
+	//Az első vektor így törölhetővé válik.
 }
 
 int main()

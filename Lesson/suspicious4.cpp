@@ -4,7 +4,10 @@
 
 std::vector<int>* suspicious()
 {
-	std::unique_ptr<std::vector<int>> p= std::make_unique<std::vector<int>>();//generikus függvény, make_unique
+	std::unique_ptr<std::vector<int>> p= std::make_unique<std::vector<int>>();
+	//generikus függvény, make_unique
+	//Ahelyett, hogy new-t használnánk dinamikus memóriafoglalásra
+	//Jobban működik hiba esetén, és jobb az allokációja is.
 	for (int i; std::cin>>i;)
 	{
 		if(i) p->push_back(i);

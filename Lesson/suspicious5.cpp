@@ -2,6 +2,7 @@
 #include <iostream>
 #include <memory>
 
+//alapvetően már egy unique_ptr-t várunk a függvényünknek, és adunk vissza
 std::unique_ptr<std::vector<int>> suspicious()
 {
 	auto p= std::make_unique<std::vector<int>>();

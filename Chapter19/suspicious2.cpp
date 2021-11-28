@@ -16,7 +16,7 @@ try
 {
 	vector<int>* p = suspicious();
 	for (int i = 0; i < p->size(); ++i)
-		cout<<p->at(i)<<" ";//-> mert p pointer
+		cout<<p->at(i)<<" ";
 	cout<<"\n";
 
 	delete p;

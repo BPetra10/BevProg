@@ -14,7 +14,7 @@ void f(const int name[], int elements)
 	int* p = new int[elements];
 	for (int i = 0; i < elements; i++)
 		p[i]=name[i];
-	
+
 	for (int i = 0; i < elements; i++)
 		cout<<p[i]<<" ";
 		cout<<"\n";

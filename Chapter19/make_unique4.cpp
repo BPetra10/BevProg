@@ -18,7 +18,7 @@ try
 {
 	std::vector<int>* p = suspicious();
 	for (int i = 0; i < p->size(); ++i)
-		std::cout<<p->at(i)<<" ";//-> mert p pointer
+		std::cout<<p->at(i)<<" ";
 	std::cout<<"\n";
 
 	delete p;
